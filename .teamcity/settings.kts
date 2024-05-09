@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.powerShell
+import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -53,6 +54,17 @@ object BuildConfigurationName : BuildType({
 
     triggers {
         vcs {
+        }
+        schedule {
+            schedulingPolicy = daily {
+                hour = 20
+                minute = 30
+            }
+            triggerBuild = always()
+
+            buildParams {
+                param("agent", "PWM")
+            }
         }
     }
 
