@@ -60,8 +60,4 @@ object BuildConfigurationName : BuildType({
         perfmon {
         }
     }
-
-    requirements {
-        contains("system.agent.name", "PWMX-DARGUELLES")
-    }
 })
