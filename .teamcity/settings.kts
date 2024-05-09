@@ -34,7 +34,8 @@ project {
 
 object BuildConfigurationName : BuildType({
     name = "Build Configuration Name"
-    description = "lorem ipsum "
+    description = "lorem ipsum"
+
     vcs {
         root(DslContext.settingsRoot)
     }
@@ -58,5 +59,9 @@ object BuildConfigurationName : BuildType({
     features {
         perfmon {
         }
+    }
+
+    requirements {
+        contains("system.agent.name", "PWMX-DARGUELLES")
     }
 })
