@@ -43,9 +43,10 @@ object BuildConfigurationName : BuildType({
         powerShell {
             name = "first step"
             id = "first_step"
-            scriptMode = script {
-                content = """Write-Host "hello world""""
+            scriptMode = file {
+                path = "firstStep.ps1"
             }
+            param("jetbrains_powershell_script_code", """Write-Host "hello world"""")
         }
     }
 
