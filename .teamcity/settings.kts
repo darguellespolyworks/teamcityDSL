@@ -34,7 +34,8 @@ project {
 
 object BuildConfigurationName : BuildType({
     name = "Build Configuration Name"
-    description = "lorem ipsum "
+    description = "lorem ipsum"
+
     vcs {
         root(DslContext.settingsRoot)
     }
