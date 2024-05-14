@@ -40,11 +40,12 @@ object BuildConfigurationName : BuildType({
     }
 
     steps {
+        val scriptPath = "firstStep.ps1"
         powerShell {
             name = "first step"
             id = "first_step"
             scriptMode = file {
-                path = "firstStep.ps1"
+                path = scriptPath
             }
             param("jetbrains_powershell_script_code", """Write-Host "hello world"""")
         }
